@@ -42,8 +42,8 @@ function Thing() {
     strokeWeight(5);
     fill(255);
 
-    line(this.a.x, this.a.y, this.b.x - this.dy, this.a.y);
-    line(this.b.x - this.dy, this.a.y, this.b.x, this.b.y);
+    line(this.a.x, this.a.y, this.b.x + this.dy, this.a.y);
+    line(this.b.x + this.dy, this.a.y, this.b.x, this.b.y);
     ellipse(this.a.x, this.a.y, 10, 10);
     ellipse(this.b.x, this.b.y, 10, 10);
   }
