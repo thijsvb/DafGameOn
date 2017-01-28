@@ -41,7 +41,7 @@ function draw() {
     for(var i=0; i!=bins.length; ++i) {
       s += bins[i];
     }
-    text(s, 0, 0, width, height);
+    text(s, 10, 10, width, height);
 
     noStroke();
     fill(0, 255, 0, 127);
