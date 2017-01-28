@@ -17,7 +17,7 @@ function setup() {
   strokeWeight(2);
   fill(255);
 
-  for(var i=0; i!=100; ++i) {
+  for(var i=0; i!=1000; ++i) {
     bins[i] = '';
     bins[i] += floor(random(2));
   }
@@ -37,11 +37,14 @@ function draw() {
   } else {
     background(0);
     fill(0, 255, 0);
-    s = "";
-    for(var i=0; i!=bins.length; ++i) {
-      s += bins[i];
+    for(var l=0; l!=100; ++l){
+      s = "";
+      var r = floor(random(100));
+      for(var i=0; i!=bins.length; ++i) {
+        s += bins[(i+r)%bins.length];
+      }
+      text(s, 10, 10 + 10*l);
     }
-    text(s, 10, 10, width, height);
 
     noStroke();
     fill(0, 255, 0, 127);
