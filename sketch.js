@@ -59,7 +59,7 @@ function draw() {
 function typing() {
   stroke(255, 0, 0);
   fill(255, 0, 0);
-  if(pw.value() == "test") {
+  if(pw.value() == "0,317187") {
     locked = false;
     pw.remove();
   }
