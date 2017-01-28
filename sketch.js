@@ -55,7 +55,7 @@ function draw() {
       var link = createA("http://10.0.0.249:5201/", "Het wachtwoord zit onder de tafel");
       link.style("color", "white").style("text-decoration", "none");
       var button = createButton('');
-      button.child(link).style("background-color", "#7f7f7f").position(width/2, height/2);
+      button.child(link).style("background-color", "#7f7f7f").position(width/2, height/4);
     }
   }
 }
