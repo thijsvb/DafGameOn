@@ -13,7 +13,7 @@ function setup() {
   background(0);
   rectMode(CENTER);
   stroke(255);
-  strokeWeight(3);
+  strokeWeight(2);
   fill(255);
 
   for(var i=0; i!=100; ++i) {
