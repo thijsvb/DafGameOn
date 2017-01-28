@@ -1,5 +1,6 @@
 var pw;
 var things = [];
+var locked = true;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -8,6 +9,9 @@ function setup() {
   pw.input(typing);
 
   background(0);
+  stroke(255);
+  strokeWeight(5);
+  fill(255);
 
   for(var i=0; i!=10; ++i) {
     things[i] = new Thing();
@@ -15,16 +19,22 @@ function setup() {
 }
 
 function draw() {
-  for(var i=0; i!=things.length; ++i) {
-    things[i].move();
-    things[i].show();
+  if(locked) {
+    background(0);
+    for(var i=0; i!=things.length; ++i) {
+      things[i].move();
+      things[i].show();
+    }
+  } else {
+    background(0, 255, 0);
   }
 }
 
 function typing() {
-  background(255, 0, 0);
+  stroke(255, 0, 0);
+  fill(255, 0, 0);
   if(pw.value() == "test") {
-    background(0, 255, 0);
+    locked = false;
     pw.remove();
     var link = createA("http://google.com", "Het wachtwoord zit onder de tafel");
     link.style("color", "white").style("text-decoration", "none");
@@ -41,9 +51,6 @@ function Thing() {
   }
 
   this.show = function() {
-    stroke(255);
-    strokeWeight(5);
-    fill(255);
 
     line(this.a.x, this.a.y, this.b.x + this.dy(), this.a.y);
     line(this.b.x + this.dy(), this.a.y, this.b.x, this.b.y);
