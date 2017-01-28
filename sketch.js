@@ -52,7 +52,7 @@ function Thing() {
   }
 
   this.move = function() {
-    this.a.add(p5Vector.random2D().mult(3));
-    this.b.add(p5Vector.random2D().mult(3));
+    this.a.add(p5.Vector.random2D().mult(3));
+    this.b.add(p5.Vector.random2D().mult(3));
   }
 }
