@@ -17,8 +17,8 @@ function typing() {
     background(0, 255, 0);
     pw.remove();
     var link = createA("http://google.com", "Het wachtwoord zit onder de tafel");
+    link.style("color", "white").style("text-decoration", "none");
     var button = createButton('');
-    button.child(link);
-    button.position(width/2, height/2);
+    button.child(link).style("color", "grey").position(width/2, height/2);
   }
 }
