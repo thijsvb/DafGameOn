@@ -33,6 +33,13 @@ function draw() {
     fill(0, 255, 0, 127);
     w+=5;
     rect(width/2, height/2, w, height/3);
+
+    if (w >= width) {
+      var link = createA("http://google.com", "Het wachtwoord zit onder de tafel");
+      link.style("color", "white").style("text-decoration", "none");
+      var button = createButton('');
+      button.child(link).style("background-color", "#7f7f7f").position(width/2, height/2);
+    }
   }
 }
 
@@ -42,10 +49,6 @@ function typing() {
   if(pw.value() == "test") {
     locked = false;
     pw.remove();
-    var link = createA("http://google.com", "Het wachtwoord zit onder de tafel");
-    link.style("color", "white").style("text-decoration", "none");
-    var button = createButton('');
-    button.child(link).style("background-color", "#7f7f7f").position(width/2, height/2);
   }
 }
 
