@@ -37,13 +37,13 @@ function draw() {
   } else {
     background(0);
     fill(0, 255, 0);
-    for(var l=0; l!=200; ++l){
+    for(var l=0; l!=round(width/5/10); ++l){
       s = "";
       var r = floor(random(100));
       for(var i=0; i!=bins.length; ++i) {
         s += bins[(i+r)%bins.length];
       }
-      text(s, 0, 10 + 10*l);
+      text(s, 0, height/2-height/10 + 10*l);
     }
 
     noStroke();
