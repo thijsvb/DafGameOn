@@ -48,7 +48,7 @@ function draw() {
 
     noStroke();
     fill(0, 255, 0, 127);
-    ++w;
+    w+=5;
     rect(width/2, height/2, w, height/5);
 
     if (w >= width) {
