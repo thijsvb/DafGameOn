@@ -1,4 +1,5 @@
 var pw;
+var things = [];
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -7,22 +8,16 @@ function setup() {
   pw.input(typing);
 
   background(0);
-  stroke(255);
-  strokeWeight(5);
-  fill(255);
+
   for(var i=0; i!=10; ++i) {
-    var a = createVector(random(width), random(height));
-    var b = createVector(random(width), random(height));
-    var dy = abs(a.y - b.y) * ((a.x - b.x)/abs(a.x - b.x));
-    line(a.x, a.y, b.x - dy, a.y);
-    line(b.x - dy, a.y, b.x, b.y);
-    ellipse(a.x, a.y, 10, 10);
-    ellipse(b.x, b.y, 10, 10);
+    things[i] = new Thing();
   }
 }
 
 function draw() {
-
+  for(var i=0; i!=things.length; ++i) {
+    things[i].show();
+  }
 }
 
 function typing() {
@@ -34,5 +29,22 @@ function typing() {
     link.style("color", "white").style("text-decoration", "none");
     var button = createButton('');
     button.child(link).style("background-color", "#7f7f7f").position(width/2, height/2);
+  }
+}
+
+function Thing() {
+  this.a = createVector(random(width), random(height));
+  this.b = createVector(random(width), random(height));
+  this.dy = abs(a.y - b.y) * ((a.x - b.x)/abs(a.x - b.x));
+
+  this.show = function() {
+    stroke(255);
+    strokeWeight(5);
+    fill(255);
+
+    line(a.x, a.y, b.x - dy, a.y);
+    line(b.x - dy, a.y, b.x, b.y);
+    ellipse(a.x, a.y, 10, 10);
+    ellipse(b.x, b.y, 10, 10);
   }
 }
