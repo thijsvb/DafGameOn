@@ -5,10 +5,22 @@ function setup() {
   pw = createInput('');
   pw.position(width/2, height/2);
   pw.input(typing);
+
   background(0);
+  stroke(255);
+  strokeWeight(5);
+  fill(255);
+  for(var i=0; i!=10; ++i) {
+    var a = createVector(random(width), random(height));
+    var b = createVector(random(width), random(height));
+    line(a.x, a.y, b.x, b.y);
+    ellipse(a.x, a.y, 10, 10);
+    ellipse(b.x, b.y, 10, 10);
+  }
 }
 
 function draw() {
+
 }
 
 function typing() {
