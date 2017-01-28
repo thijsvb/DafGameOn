@@ -17,7 +17,7 @@ function setup() {
   strokeWeight(2);
   fill(255);
 
-  for(var i=0; i!=200; ++i) {
+  for(var i=0; i!=400; ++i) {
     bins[i] = '';
     bins[i] += floor(random(2));
   }
@@ -37,7 +37,7 @@ function draw() {
   } else {
     background(0);
     fill(0, 255, 0);
-    for(var l=0; l!=110; ++l){
+    for(var l=0; l!=200; ++l){
       s = "";
       var r = floor(random(100));
       for(var i=0; i!=bins.length; ++i) {
@@ -49,7 +49,7 @@ function draw() {
     noStroke();
     fill(0, 255, 0, 127);
     ++w;
-    rect(width/2, height/2, w, height/3);
+    rect(width/2, height/2, w, height/5);
 
     if (w >= width) {
       var link = createA("http://google.com", "Het wachtwoord zit onder de tafel");
