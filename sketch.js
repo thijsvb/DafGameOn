@@ -13,7 +13,7 @@ function setup() {
   background(0);
   rectMode(CENTER);
   stroke(255);
-  strokeWeight(5);
+  strokeWeight(3);
   fill(255);
 
   for(var i=0; i!=100; ++i) {
@@ -36,7 +36,11 @@ function draw() {
   } else {
     background(0);
     fill(0, 255, 0);
-
+    var s = "";
+    for(var i=0; i!=bins.length; ++i) {
+      s += bins[i];
+    }
+    text(s, 0, 0, width, height);
 
     noStroke();
     fill(0, 255, 0, 127);
