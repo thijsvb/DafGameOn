@@ -3,6 +3,7 @@ var things = [];
 var locked = true;
 var w = 0;
 var bins = [];
+var s;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -36,7 +37,7 @@ function draw() {
   } else {
     background(0);
     fill(0, 255, 0);
-    var s = "";
+    s = "";
     for(var i=0; i!=bins.length; ++i) {
       s += bins[i];
     }
