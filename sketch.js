@@ -35,16 +35,16 @@ function typing() {
 function Thing() {
   this.a = createVector(random(width), random(height));
   this.b = createVector(random(width), random(height));
-  this.dy = abs(a.y - b.y) * ((a.x - b.x)/abs(a.x - b.x));
+  this.dy = abs(this.a.y - this.b.y) * ((this.a.x - this.b.x)/abs(this.a.x - this.b.x));
 
   this.show = function() {
     stroke(255);
     strokeWeight(5);
     fill(255);
 
-    line(a.x, a.y, b.x - dy, a.y);
-    line(b.x - dy, a.y, b.x, b.y);
-    ellipse(a.x, a.y, 10, 10);
-    ellipse(b.x, b.y, 10, 10);
+    line(this.a.x, this.a.y, this.b.x - this.dy, this.a.y);
+    line(this.b.x - this.dy, this.a.y, this.b.x, this.b.y);
+    ellipse(this.a.x, this.a.y, 10, 10);
+    ellipse(this.b.x, this.b.y, 10, 10);
   }
 }
