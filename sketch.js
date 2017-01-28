@@ -84,7 +84,7 @@ function Thing() {
 
     this.a.x = (this.a.x+width)%width;
     this.a.y = (this.a.y+height)%height;
-    this.b.x = (this.a.x+width)%width;
-    this.b.y = (this.a.y+height)%height;
+    this.b.x = (this.b.x+width)%width;
+    this.b.y = (this.b.y+height)%height;
   }
 }
