@@ -13,7 +13,9 @@ function setup() {
   for(var i=0; i!=10; ++i) {
     var a = createVector(random(width), random(height));
     var b = createVector(random(width), random(height));
-    line(a.x, a.y, b.x, b.y);
+    var dy = abs(a.y - b.y) * sgn(a.x - b.x);
+    line(a.x, a.y, b.x - dy, a.y);
+    line(b.x - dy, a.y, b.x, b.y);
     ellipse(a.x, a.y, 10, 10);
     ellipse(b.x, b.y, 10, 10);
   }
