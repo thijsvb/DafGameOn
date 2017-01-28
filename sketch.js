@@ -5,10 +5,10 @@ function setup() {
   pw = createInput('');
   pw.position(width/2, height/2);
   pw.changed(typing);
+    background(0);
 }
 
 function draw() {
-  background(0);
 }
 
 function typing() {
