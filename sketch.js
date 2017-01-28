@@ -16,11 +16,9 @@ function setup() {
   strokeWeight(5);
   fill(255);
 
-  for(var i=0; i!=10; ++i) {
-    bins[i] = "";
-    for(var j=0; j!=100; ++i) {
-      bins[i] += floor(random(2));
-    }
+  for(var i=0; i!=100; ++i) {
+    bins[i] = '';
+    bins[i] += floor(random(2));
   }
 
   for(var i=0; i!=10; ++i) {
