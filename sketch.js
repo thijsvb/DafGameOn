@@ -1,11 +1,10 @@
 var pw;
 
 function setup() {
-  fullscreen(true);
   createCanvas(windowWidth, windowHeight);
   pw = createInput('');
   pw.position(width/2, height/2);
-  pw.input(typing);
+  pw.changed(typing);
 }
 
 function draw() {
