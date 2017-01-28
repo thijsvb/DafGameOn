@@ -5,6 +5,7 @@ var w = 0;
 var bins = [];
 var s;
 
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
   pw = createInput('');
