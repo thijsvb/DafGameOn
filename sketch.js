@@ -1,6 +1,7 @@
 var pw;
 var things = [];
 var locked = true;
+var w = 0;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -9,6 +10,7 @@ function setup() {
   pw.input(typing);
 
   background(0);
+  rectMode(CENTER);
   stroke(255);
   strokeWeight(5);
   fill(255);
@@ -26,7 +28,11 @@ function draw() {
       things[i].show();
     }
   } else {
-    background(0, 255, 0);
+    background(0);
+    noStroke();
+    fill(0, 255, 0, 127);
+    w+=5;
+    rect(width/2, height/2, w, height/3);
   }
 }
 
@@ -46,6 +52,8 @@ function typing() {
 function Thing() {
   this.a = createVector(random(width), random(height));
   this.b = createVector(random(width), random(height));
+  this.va = p5.Vector.random2D().mult(3);
+  this.vb = p5.Vector.random2D().mult(3);
   this.dy = function() {
     return abs(this.a.y - this.b.y) * ((this.a.x - this.b.x)/abs(this.a.x - this.b.x));
   }
@@ -59,7 +67,7 @@ function Thing() {
   }
 
   this.move = function() {
-    this.a.add(p5.Vector.random2D().mult(3));
-    this.b.add(p5.Vector.random2D().mult(3));
+    this.a.add(this.va);
+    this.b.add(this.vb);
   }
 }
