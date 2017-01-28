@@ -4,7 +4,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   pw = createInput('');
   pw.position(width/2, height/2);
-  pw.changed(typing);
+  pw.input(typing);
   background(0);
 }
 
